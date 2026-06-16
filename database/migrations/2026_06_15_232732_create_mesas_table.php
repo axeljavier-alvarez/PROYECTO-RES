@@ -11,8 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ordens', function (Blueprint $table) {
+        Schema::connection('desarrollo-social')->create('mesas', function (Blueprint $table) {
             $table->id();
+
+            $table->string('numero');
+
+            $table->enum('estado', [
+                'libre',
+                'ocupada',
+            ])->default('libre');
+
             $table->timestamps();
         });
     }
@@ -22,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ordens');
+        Schema::dropIfExists('mesas');
     }
 };
