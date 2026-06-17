@@ -22,6 +22,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+    $this->call([
+        \Database\Seeders\ConejoDeFuego\CategoriaSeeder::class,
+    ]);
+
         // AREAS
         Area::create([
             'name' => 'Gerencia de Desarrollo Social',
