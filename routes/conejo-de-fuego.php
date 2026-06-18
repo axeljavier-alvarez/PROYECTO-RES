@@ -3,6 +3,7 @@
 use App\Livewire\ConejoDeFuego\Categorias;
 use App\Livewire\ConejoDeFuego\Productos;
 use App\Livewire\ConejoDeFuego\Mesas;
+use App\Livewire\ConejoDeFuego\Ordenes;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('conejo-de-fuego')->group(function () {
@@ -17,5 +18,8 @@ Route::prefix('conejo-de-fuego')->group(function () {
     Route::get('admin-mesas', Mesas::class)
         ->middleware(['can:page.view.conejo-de-fuego.admin-mesas'])
         ->name('conejo-de-fuego.admin-mesas');
+        Route::get('admin-ordenes', Ordenes::class)
+        ->middleware(['can:page.view.conejo-de-fuego.admin-ordenes'])
+        ->name('conejo-de-fuego.admin-ordenes');
 
 });

@@ -228,6 +228,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
+        Page::create([
+            'label' => 'Administración de ordenes',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.admin-ordenes',
+            'order' => 4,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.admin-ordenes',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
+
         // PERMISOS
 
         Permission::create([
@@ -461,6 +472,13 @@ class DatabaseSeeder extends Seeder
             'guard_name' => 'web',
             'module' => 'menu'
         ]);
+
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.admin-ordenes',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+
 
 
         // END PERMISOS
