@@ -258,15 +258,47 @@ class DatabaseSeeder extends Seeder
             'page_id' => $paginaRestaurante->id,
         ]);
 
+
+        Page::create([
+            'label' => 'Bebidas',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.bebidas',
+            'order' => 7,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.bebidas',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
         Page::create([
             'label' => 'Dashboard mesas',
             'icon' => 'document-text',
             'route' => 'conejo-de-fuego.dashboard-mesas',
-            'order' => 7,
+            'order' => 8,
             'type' => 'page',
             'permission_name' => 'page.view.conejo-de-fuego.dashboard-mesas',
             'page_id' => $paginaRestaurante->id,
         ]);
+
+        Page::create([
+            'label' => 'Facturación',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.facturacion',
+            'order' => 9,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.facturacion',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
+        Page::create([
+            'label' => 'Dashboard ventas',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.dashboard-ventas',
+            'order' => 10,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.dashboard-ventas',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
 
 
         // PERMISOS
@@ -520,13 +552,25 @@ class DatabaseSeeder extends Seeder
             'module' => 'menu'
         ]);
         Permission::create([
+            'name' => 'page.view.conejo-de-fuego.bebidas',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+        Permission::create([
             'name' => 'page.view.conejo-de-fuego.dashboard-mesas',
             'guard_name' => 'web',
             'module' => 'menu'
         ]);
-
-
-
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.facturacion',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.dashboard-ventas',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
 
         // END PERMISOS
 

@@ -10,7 +10,9 @@ use App\Livewire\ConejoDeFuego\OrdenesListado;
 use App\Livewire\ConejoDeFuego\Cocina;
 use App\Livewire\ConejoDeFuego\DashboardMesas;
 use Illuminate\Support\Facades\Route;
-
+use App\Livewire\ConejoDeFuego\Bebidas;
+use App\Livewire\ConejoDeFuego\Facturacion;
+use App\Livewire\ConejoDeFuego\DashboardVentas;
 Route::prefix('conejo-de-fuego')->group(function () {
 
     Route::get('registro-categorias', Categorias::class)
@@ -33,8 +35,21 @@ Route::prefix('conejo-de-fuego')->group(function () {
     Route::get('cocina', Cocina::class)
         ->middleware(['can:page.view.conejo-de-fuego.cocina'])
         ->name('conejo-de-fuego.cocina');
+
+    Route::get('bebidas', Bebidas::class)
+        ->middleware(['can:page.view.conejo-de-fuego.bebidas'])
+        ->name('conejo-de-fuego.bebidas');
+
+    Route::get('facturacion', Facturacion::class)
+        ->middleware(['can:page.view.conejo-de-fuego.bebidas'])
+        ->name('conejo-de-fuego.facturacion');
+
+
+    Route::get('dashboard-ventas', DashboardVentas::class)
+        ->middleware(['can:page.view.conejo-de-fuego.dashboard-ventas'])
+        ->name('conejo-de-fuego.dashboard-ventas');
+
     Route::get('dashboard-mesas', DashboardMesas::class)
         ->middleware(['can:page.view.conejo-de-fuego.dashboard-mesas'])
         ->name('conejo-de-fuego.dashboard-mesas');
-
 });
