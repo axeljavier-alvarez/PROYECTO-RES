@@ -82,7 +82,6 @@
     <div class="grid gap-4">
 
         <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__empty_1 = true; $__currentLoopData = $this->rows; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $orden): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoop($loop->index); ?><?php endif; ?>
-
             <?php if (isset($component)) { $__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc4bce27d2c09d2f98a63d67977c1c3ec = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::card.index','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -98,9 +97,7 @@
 
                 <div class="space-y-4">
 
-                    <div
-                        class="flex flex-col md:flex-row md:justify-between md:items-center gap-3"
-                    >
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
 
                         <div>
 
@@ -114,15 +111,11 @@
                             <div class="text-sm text-zinc-500">
 
                                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($orden->tipo === 'mesa'): ?>
-
                                     Mesa:
                                     <?php echo e($orden->mesa?->numero); ?>
 
-
                                 <?php else: ?>
-
                                     Para llevar
-
                                 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
                             </div>
@@ -132,9 +125,7 @@
                         <div>
 
                             <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php switch($orden->estado):
-
                                 case ('pendiente'): ?>
-
                                     <?php if (isset($component)) { $__componentOriginal4cc377eda9b63b796b6668ee7832d023 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal4cc377eda9b63b796b6668ee7832d023 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::badge.index','data' => ['color' => 'yellow']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -158,11 +149,9 @@
 <?php $component = $__componentOriginal4cc377eda9b63b796b6668ee7832d023; ?>
 <?php unset($__componentOriginal4cc377eda9b63b796b6668ee7832d023); ?>
 <?php endif; ?>
-
-                                    <?php break; ?>
+                                <?php break; ?>
 
                                 <?php case ('preparando'): ?>
-
                                     <?php if (isset($component)) { $__componentOriginal4cc377eda9b63b796b6668ee7832d023 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal4cc377eda9b63b796b6668ee7832d023 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::badge.index','data' => ['color' => 'blue']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -186,11 +175,9 @@
 <?php $component = $__componentOriginal4cc377eda9b63b796b6668ee7832d023; ?>
 <?php unset($__componentOriginal4cc377eda9b63b796b6668ee7832d023); ?>
 <?php endif; ?>
-
-                                    <?php break; ?>
+                                <?php break; ?>
 
                                 <?php case ('lista'): ?>
-
                                     <?php if (isset($component)) { $__componentOriginal4cc377eda9b63b796b6668ee7832d023 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal4cc377eda9b63b796b6668ee7832d023 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::badge.index','data' => ['color' => 'green']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
@@ -214,9 +201,7 @@
 <?php $component = $__componentOriginal4cc377eda9b63b796b6668ee7832d023; ?>
 <?php unset($__componentOriginal4cc377eda9b63b796b6668ee7832d023); ?>
 <?php endif; ?>
-
-                                    <?php break; ?>
-
+                                <?php break; ?>
                             <?php endswitch; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
                         </div>
@@ -347,9 +332,8 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $orden->items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoop($loop->index); ?><?php endif; ?>
-
-                                    <?php if (isset($component)) { $__componentOriginal2133c30832e0f094522523cf64171420 = $component; } ?>
+                                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::openLoop(); ?><?php endif; ?><?php $__currentLoopData = $orden->items->filter(fn($item) => in_array($item->producto?->categoria?->nombre, ['Desayunos y Cena', 'Almuerzos', 'Pastas', 'Antojitos', 'Hamburguesas'])); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::startLoop($loop->index); ?><?php endif; ?>
+                                        <?php if (isset($component)) { $__componentOriginal2133c30832e0f094522523cf64171420 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal2133c30832e0f094522523cf64171420 = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::table.row','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('flux::table.row'); ?>
@@ -362,7 +346,7 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                                        <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
+                                            <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal57d943fde8fc41daddcb4b24245801cc = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::table.cell','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('flux::table.cell'); ?>
@@ -375,10 +359,10 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                                            <?php echo e($item->producto?->nombre); ?>
+                                                <?php echo e($item->producto?->nombre); ?>
 
 
-                                         <?php echo $__env->renderComponent(); ?>
+                                             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal57d943fde8fc41daddcb4b24245801cc)): ?>
 <?php $attributes = $__attributesOriginal57d943fde8fc41daddcb4b24245801cc; ?>
@@ -389,7 +373,7 @@
 <?php unset($__componentOriginal57d943fde8fc41daddcb4b24245801cc); ?>
 <?php endif; ?>
 
-                                        <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
+                                            <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal57d943fde8fc41daddcb4b24245801cc = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::table.cell','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('flux::table.cell'); ?>
@@ -402,10 +386,10 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                                            <?php echo e($item->cantidad); ?>
+                                                <?php echo e($item->cantidad); ?>
 
 
-                                         <?php echo $__env->renderComponent(); ?>
+                                             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal57d943fde8fc41daddcb4b24245801cc)): ?>
 <?php $attributes = $__attributesOriginal57d943fde8fc41daddcb4b24245801cc; ?>
@@ -416,7 +400,7 @@
 <?php unset($__componentOriginal57d943fde8fc41daddcb4b24245801cc); ?>
 <?php endif; ?>
 
-                                        <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
+                                            <?php if (isset($component)) { $__componentOriginal57d943fde8fc41daddcb4b24245801cc = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal57d943fde8fc41daddcb4b24245801cc = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::table.cell','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('flux::table.cell'); ?>
@@ -429,10 +413,10 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                                            <?php echo e($item->nota ?: '-'); ?>
+                                                <?php echo e($item->nota ?: '-'); ?>
 
 
-                                         <?php echo $__env->renderComponent(); ?>
+                                             <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal57d943fde8fc41daddcb4b24245801cc)): ?>
 <?php $attributes = $__attributesOriginal57d943fde8fc41daddcb4b24245801cc; ?>
@@ -443,7 +427,7 @@
 <?php unset($__componentOriginal57d943fde8fc41daddcb4b24245801cc); ?>
 <?php endif; ?>
 
-                                     <?php echo $__env->renderComponent(); ?>
+                                         <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginal2133c30832e0f094522523cf64171420)): ?>
 <?php $attributes = $__attributesOriginal2133c30832e0f094522523cf64171420; ?>
@@ -454,7 +438,7 @@
 <?php unset($__componentOriginal2133c30832e0f094522523cf64171420); ?>
 <?php endif; ?>
 
-                                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
+                                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
 
                              <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
@@ -480,14 +464,12 @@
 
                     </div>
 
-                    <div
-                        class="flex justify-between items-center"
-                    >
+                    <div class="flex justify-between items-center">
 
                         <div class="font-bold">
 
                             Total:
-                            Q <?php echo e(number_format($orden->total,2)); ?>
+                            Q <?php echo e(number_format($orden->total, 2)); ?>
 
 
                         </div>
@@ -532,17 +514,11 @@
 
 
                                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php if($orden->estado === 'pendiente'): ?>
-
                                     Iniciar preparación
-
                                 <?php elseif($orden->estado === 'preparando'): ?>
-
                                     Marcar lista
-
                                 <?php elseif($orden->estado === 'lista'): ?>
-
                                     Entregar
-
                                 <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
                              <?php echo $__env->renderComponent(); ?>
@@ -573,9 +549,9 @@
 <?php unset($__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec); ?>
 <?php endif; ?>
 
-        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
+            <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::endLoop(); ?><?php endif; ?><?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::closeLoop(); ?><?php endif; ?>
 
-            <?php if (isset($component)) { $__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec = $component; } ?>
+                <?php if (isset($component)) { $__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginalc4bce27d2c09d2f98a63d67977c1c3ec = $attributes; } ?>
 <?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'e60dd9d2c3a62d619c9acb38f20d5aa5::card.index','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
 <?php $component->withName('flux::card'); ?>
@@ -588,13 +564,13 @@
 <?php \Livewire\Features\SupportCompiledWireKeys\SupportCompiledWireKeys::processComponentKey($component); ?>
 
 
-                <div class="text-center py-10">
+                    <div class="text-center py-10">
 
-                    No existen órdenes pendientes.
+                        No existen órdenes pendientes.
 
-                </div>
+                    </div>
 
-             <?php echo $__env->renderComponent(); ?>
+                 <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
 <?php if (isset($__attributesOriginalc4bce27d2c09d2f98a63d67977c1c3ec)): ?>
 <?php $attributes = $__attributesOriginalc4bce27d2c09d2f98a63d67977c1c3ec; ?>
@@ -604,12 +580,12 @@
 <?php $component = $__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec; ?>
 <?php unset($__componentOriginalc4bce27d2c09d2f98a63d67977c1c3ec); ?>
 <?php endif; ?>
+            <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
 
-        <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+        </div>
+
+        <?php echo e($this->rows->links()); ?>
+
 
     </div>
-
-    <?php echo e($this->rows->links()); ?>
-
-
-</div><?php /**PATH C:\laragon\www\proyecto-restaurante\resources\views/livewire/conejo-de-fuego/cocina.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\laragon\www\proyecto-restaurante\resources\views/livewire/conejo-de-fuego/cocina.blade.php ENDPATH**/ ?>
