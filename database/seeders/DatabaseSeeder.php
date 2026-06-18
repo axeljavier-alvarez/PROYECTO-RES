@@ -238,6 +238,36 @@ class DatabaseSeeder extends Seeder
             'page_id' => $paginaRestaurante->id,
         ]);
 
+        Page::create([
+            'label' => 'Consultar pedidos',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.ordenes-listado',
+            'order' => 5,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.ordenes-listado',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
+        Page::create([
+            'label' => 'Cocina',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.cocina',
+            'order' => 6,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.cocina',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
+        Page::create([
+            'label' => 'Dashboard mesas',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.dashboard-mesas',
+            'order' => 7,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.dashboard-mesas',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
 
         // PERMISOS
 
@@ -478,6 +508,23 @@ class DatabaseSeeder extends Seeder
             'guard_name' => 'web',
             'module' => 'menu'
         ]);
+
+         Permission::create([
+            'name' => 'page.view.conejo-de-fuego.ordenes-listado',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.cocina',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.dashboard-mesas',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+
 
 
 

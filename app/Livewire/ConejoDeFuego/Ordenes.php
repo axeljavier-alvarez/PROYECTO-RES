@@ -74,7 +74,7 @@ class Ordenes extends Component
 
             $producto = Producto::find($item['producto_id']);
 
-            if (!$producto) {
+            if (! $producto) {
                 continue;
             }
 
@@ -109,7 +109,7 @@ class Ordenes extends Component
 
         if (
             $this->tipo === 'mesa'
-            && !$this->mesa_id
+            && ! $this->mesa_id
         ) {
             $this->addError(
                 'mesa_id',
@@ -120,7 +120,7 @@ class Ordenes extends Component
         }
 
         $productosValidos = collect($this->items)
-            ->filter(fn ($item) => !empty($item['producto_id']));
+            ->filter(fn ($item) => ! empty($item['producto_id']));
 
         if ($productosValidos->count() === 0) {
 
@@ -134,7 +134,7 @@ class Ordenes extends Component
 
         DB::transaction(function () {
 
-            $numero = 'ORD-' .
+            $numero = 'ORD-'.
                 str_pad(
                     Orden::count() + 1,
                     5,
@@ -144,9 +144,7 @@ class Ordenes extends Component
 
             $orden = Orden::create([
                 'numero' => $numero,
-                'mesa_id' => $this->tipo === 'mesa'
-                    ? $this->mesa_id
-                    : null,
+                'mesa_id' => $this->mesa_id,
                 'tipo' => $this->tipo,
                 'estado' => 'pendiente',
                 'subtotal' => $this->total,
@@ -167,6 +165,14 @@ class Ordenes extends Component
                     'subtotal' => (float) $item['subtotal'],
                     'nota' => $item['nota'] ?? null,
                 ]);
+            }
+
+            if ($this->tipo === 'mesa' && $this->mesa_id) {
+
+                Mesa::where('id', $this->mesa_id)
+                    ->update([
+                        'estado' => 'ocupada',
+                    ]);
             }
         });
 
@@ -198,8 +204,8 @@ class Ordenes extends Component
                     'activo',
                     true
                 )
-                ->orderBy('nombre')
-                ->get(),
+                    ->orderBy('nombre')
+                    ->get(),
             ]
         );
     }
