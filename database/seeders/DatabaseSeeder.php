@@ -14,6 +14,9 @@ use App\Models\Zona;
 use Illuminate\Database\Seeder;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Spatie\Permission\Models\Role;
+use Database\Seeders\ConejoDeFuego\CategoriaSeeder;
+use Database\Seeders\ConejoDeFuego\ComidaMenuSeeder;
+use Database\Seeders\ConejoDeFuego\MesaSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,7 +27,9 @@ class DatabaseSeeder extends Seeder
     {
 
     $this->call([
-        \Database\Seeders\ConejoDeFuego\CategoriaSeeder::class,
+        CategoriaSeeder::class,
+        ComidaMenuSeeder::class,
+        MesaSeeder::class
     ]);
 
         // AREAS
@@ -201,6 +206,27 @@ class DatabaseSeeder extends Seeder
             'permission_name' => 'page.view.conejo-de-fuego.registro-categorias',
             'page_id' => $paginaRestaurante->id,
         ]);
+
+        Page::create([
+            'label' => 'Registro de comidas',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.registro-comidas',
+            'order' => 2,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.registro-comidas',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
+        Page::create([
+            'label' => 'Administración de mesas',
+            'icon' => 'document-text',
+            'route' => 'conejo-de-fuego.admin-mesas',
+            'order' => 3,
+            'type' => 'page',
+            'permission_name' => 'page.view.conejo-de-fuego.admin-mesas',
+            'page_id' => $paginaRestaurante->id,
+        ]);
+
 
         // PERMISOS
 
@@ -419,6 +445,19 @@ class DatabaseSeeder extends Seeder
 
         Permission::create([
             'name' => 'page.view.conejo-de-fuego.registro-categorias',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.registro-comidas',
+            'guard_name' => 'web',
+            'module' => 'menu'
+        ]);
+
+        
+        Permission::create([
+            'name' => 'page.view.conejo-de-fuego.admin-mesas',
             'guard_name' => 'web',
             'module' => 'menu'
         ]);
