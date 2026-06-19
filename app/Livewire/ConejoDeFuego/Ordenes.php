@@ -198,7 +198,12 @@ class Ordenes extends Component
         return view(
             'livewire.conejo-de-fuego.ordenes',
             [
-                'mesas' => Mesa::orderBy('numero')->get(),
+                'mesas' => Mesa::where(
+                    'estado',
+                    'libre'
+                )
+                    ->orderBy('numero')
+                    ->get(),
 
                 'productos' => Producto::where(
                     'activo',

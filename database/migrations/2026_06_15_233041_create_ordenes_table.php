@@ -31,7 +31,9 @@ return new class extends Migration
                 'preparando',
                 'lista',
                 'entregada',
+                'facturada',
                 'cancelada',
+                
             ])->default('pendiente');
 
             $table->decimal('subtotal', 10, 2)->default(0);

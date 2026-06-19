@@ -36,6 +36,11 @@ class Cocina extends Component
                 'entregada',
                 'cancelada'
             ])
+            ->whereHas('items.producto', function ($query) {
+
+                $query->where('area', 'cocina');
+
+            })
             ->latest()
             ->paginate($this->per_page);
     }
@@ -55,9 +60,6 @@ class Cocina extends Component
             'estado' => $nuevoEstado
         ]);
 
-        /*
-        liberar mesa cuando la orden finaliza
-        */
         if (
             $nuevoEstado === 'entregada'
             && $orden->mesa_id

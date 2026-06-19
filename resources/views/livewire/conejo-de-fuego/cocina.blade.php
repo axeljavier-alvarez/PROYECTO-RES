@@ -96,33 +96,31 @@
 
                             <flux:table.rows>
 
-                                    @foreach ($orden->items->filter(fn($item) => in_array($item->producto?->categoria?->nombre, ['Desayunos y Cena', 'Almuerzos', 'Pastas', 'Antojitos', 'Hamburguesas'])) as $item)
+                                @foreach($orden->items as $item)
+
+                                    @if($item->producto?->area === 'cocina')
+
                                         <flux:table.row>
 
                                             <flux:table.cell>
-
                                                 {{ $item->producto?->nombre }}
-
                                             </flux:table.cell>
 
                                             <flux:table.cell>
-
                                                 {{ $item->cantidad }}
-
                                             </flux:table.cell>
 
                                             <flux:table.cell>
-
                                                 {{ $item->nota ?: '-' }}
-
                                             </flux:table.cell>
 
                                         </flux:table.row>
 
-                                    @endforeach
+                                    @endif
+
+                                @endforeach
 
                             </flux:table.rows>
-
                         </flux:table>
 
                     </div>
